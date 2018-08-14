@@ -2,28 +2,34 @@
 
 int main(int argc, char const *argv[])
 {   
-	char a;
-	long b;
+	char name1[4];
+	char name[] = "vadim";
+	char pw1[7];
+	char pw[] = "abrams87";
+	
 	printf("-------LOGIN SYSTEM-------\n");
 	printf("...........................\n");
-	printf("Bitte Benutzername eingeben (ein Buchstabe):\n");
-	
-	scanf("%c", &a);
-	if (a == 'v')
+	printf("Bitte Benutzername eingeben:\n");
+
+	scanf("%s",&name1);
+
+	if (strcmp(name1,name) == 0)
 	{
-		printf("Benutzername korrekt\n");
-	}else
-	printf("Benutzername falsch\n");
+		printf("Bitte Passwort eingeben:\n");
 
-    printf("Bitte Password eingeben:\n");
+		scanf("%s",&pw1);
 
-    scanf("%ld",&b);
+	    if (strcmp(pw1, pw) == 0)
+	        {
+		      printf("Willkommne im System!\n");
+	        }else{
+		          printf("Passwort falsch\n");
+	             }
 
-    if (b == 845671)
-    {
-    	printf("Passwort korrekt\n");
-    }else
-    printf("Passwort falsch\n");
 
+	}else{
+		printf("Login Name falsch\n");
+		
+	}
 	return 0;
 }
